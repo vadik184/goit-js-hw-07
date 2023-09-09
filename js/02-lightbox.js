@@ -51,7 +51,5 @@ cssSimple.href =
 cssSimple.rel = "stylesheet";
 bodyScriptLib.append(scriptSimple);
 headPart.append(cssSimple);
-console.log(scriptSimple);
-console.log(cssSimple);
 
 console.log(galleryItems);
