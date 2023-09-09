@@ -2,9 +2,10 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 const gallery = document.querySelector(".gallery");
-let instance;
-//let instance;
 
+let instance;
+//---------Питання до перевіряючого - "Чому "Варіант 1" створює зображення у шаховому порядку, а "Варіант 2" ні? Дякую!"
+// ----------варіант 1-----------
 // function getListOfImg(arry) {
 //   const images = arry
 //     .map(
@@ -25,6 +26,7 @@ let instance;
 // }
 // getListOfImg(galleryItems);
 
+// ----------варіант 2-----------
 const images = galleryItems.map((item) => {
   let listOfImg = document.createElement("li");
   listOfImg.classList.add("gallery__item");
@@ -48,11 +50,11 @@ gallery.append(...images);
 
 //import * as basicLightbox from "basiclightbox";
 
-gallery.addEventListener("click", openModal);
-
+//
 const openModal = (event) => {
   if (event.target.nodeName === "IMG") {
     event.preventDefault();
+
     instance = basicLightbox.create(
       `<img src="${event.target.dataset.source}">`
     );
@@ -65,6 +67,8 @@ const closeModal = (event) => {
   if (event.code === "Escape") instance.close();
 };
 
+gallery.addEventListener("click", openModal);
+
 const bodyScriptLib = document.querySelector("body");
 const scriptLib = document.createElement("script");
 scriptLib.src =
@@ -76,5 +80,5 @@ cssLib.href =
 cssLib.rel = "stylesheet";
 bodyScriptLib.append(scriptLib);
 headPart.append(cssLib);
-console.log(cssLib);
-console.log(scriptLib);
+
+console.log(galleryItems);
