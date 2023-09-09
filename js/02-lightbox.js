@@ -24,6 +24,8 @@ const images = galleryItems.map((item) => {
 
 gallery.append(...images);
 
+//---------не знаю в чому причина, але зображення відкриваються з другого кліка, після повторного закриття через мишку (клік) записає,
+//---------але з клавіатури все працює.
 const getSlide = (event) => {
   if (event.target.nodeName === "IMG") {
     event.preventDefault();
