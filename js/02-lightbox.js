@@ -14,7 +14,6 @@ const images = galleryItems.map((item) => {
   let imgItem = document.createElement("img");
   imgItem.classList.add("gallery__image");
   imgItem.src = item.preview;
-  imgItem.dataset.source = item.original;
   imgItem.alt = item.description;
 
   imgLink.append(imgItem);
@@ -38,6 +37,7 @@ const getSlide = (event) => {
 };
 
 gallery.addEventListener("click", getSlide);
+
 //
 
 const bodyScriptLib = document.querySelector("body");
