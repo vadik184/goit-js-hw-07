@@ -46,13 +46,13 @@ new SimpleLightbox(".gallery a", options);
 // bodyScriptLib.append(scriptSimple);
 // headPart.append(cssSimple);
 
-document.body.insertAdjacentHTML(
-  "beforeend",
-  `<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>`
-);
-document.head.insertAdjacentHTML(
-  "beforeend",
-  `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />`
-);
+// document.body.insertAdjacentHTML(
+//   "beforeend",
+//   `<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>`
+// );
+// document.head.insertAdjacentHTML(
+//   "beforeend",
+//   `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />`
+// );
 
 console.log(galleryItems);
