@@ -1,7 +1,9 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-
 const gallery = document.querySelector(".gallery");
+
+// В ДЗ сказано нічого не міняти у вихідному коді, як так розумію це в HTML?
+//я пробував різними способами підключити CSS і JS, та безуспішно, тому вніс їх вручну
 
 const images = galleryItems.map((item) => {
   let listOfImg = document.createElement("li");
@@ -23,35 +25,34 @@ const images = galleryItems.map((item) => {
 
 gallery.append(...images);
 
-//---------не знаю в чому причина, але зображення відкриваються з другого кліка, після повторного закриття через мишку (клік) записає,
-//---------але з клавіатури все працює.
-const getSlide = (event) => {
-  if (event.target.nodeName === "IMG") {
-    event.preventDefault();
-    let options = {
-      captionsData: "alt",
-      captionDelay: 250,
-    };
-    new SimpleLightbox(".gallery a", options);
-  }
+let options = {
+  captionsData: "alt",
+  captionDelay: 250,
 };
 
-gallery.addEventListener("click", getSlide);
+new SimpleLightbox(".gallery a", options);
 
-//
+//const bodyScriptLib = document.querySelector("body");
+//const headPart = document.querySelector("head");
 
-const bodyScriptLib = document.querySelector("body");
-const headPart = document.querySelector("head");
+// const scriptSimple = document.createElement("script");
+// scriptSimple.src =
+//   "https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js";
 
-const scriptSimple = document.createElement("script");
-scriptSimple.src =
-  "https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js";
+// const cssSimple = document.createElement("link");
+// cssSimple.href =
+//   "https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css";
+// cssSimple.rel = "stylesheet";
+// bodyScriptLib.append(scriptSimple);
+// headPart.append(cssSimple);
 
-const cssSimple = document.createElement("link");
-cssSimple.href =
-  "https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.css";
-cssSimple.rel = "stylesheet";
-bodyScriptLib.append(scriptSimple);
-headPart.append(cssSimple);
+document.body.insertAdjacentHTML(
+  "beforeend",
+  `<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>`
+);
+document.head.insertAdjacentHTML(
+  "beforeend",
+  `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />`
+);
 
 console.log(galleryItems);

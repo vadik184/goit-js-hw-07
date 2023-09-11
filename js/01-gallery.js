@@ -53,8 +53,6 @@ gallery.append(...images);
 //
 const openModal = (event) => {
   if (event.target.nodeName === "IMG") {
-    event.preventDefault();
-
     instance = basicLightbox.create(
       `<img src="${event.target.dataset.source}">`
     );
@@ -81,4 +79,16 @@ cssLib.rel = "stylesheet";
 bodyScriptLib.append(scriptLib);
 headPart.append(cssLib);
 
-console.log(galleryItems);
+console.log(galleryItems); // Change code below this line
+document.body.insertAdjacentHTML(
+  "beforeend",
+  `<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>`,
+
+  document.head.insertAdjacentHTML(
+    "beforeend",
+    `<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css"
+    />`
+  )
+);
